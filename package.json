@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": ": build",
+    "postbuild": "cp -r dist www"
+  },
+  "name": "nju33.work",
+  "version": "0.0.0",
+  "description": "Blog",
+  "repository": "nju33/nju33.work",
+  "author": "nju33 <nju33.ki@gmail.com>",
+  "license": "MIT"
+}
