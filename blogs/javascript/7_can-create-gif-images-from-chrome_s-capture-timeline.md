@@ -32,7 +32,7 @@ npm i -g snapline
 
 起動したら`timeline`タブを開いて、`Screenshots`という項目だけにチェックを入れます。これで準備完了です。
 
-![Env](/javascript/images/can-create-gif-images-from-chrome_s-capture-timeline/env.png)
+![Setting](/javascript/images/can-create-gif-images-from-chrome_s-capture-timeline/setting.png)
 
 左上のレコードボタンをクリックして（Macだったら「`cmd` + `e`」同時押しでもいけます）キャプチャしたいページで撮りたい動作を操作します。終わりたい時は、もう一度レコードボタンを押すだけです。
 
