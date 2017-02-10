@@ -62,3 +62,51 @@ const vdom$: Stream<VNode> = sources.DOM.select('button').events('click')
 まぁとりあえず、これでいいのか分かりませんが、カウントできるやつができました。
 
 ![Counter app complete](/start-cyclejs/images/create-counter-app/complete.png)
+
+## カウンターアプリをもうちょい改善する
+
+```ts
+import xs, {Stream} from 'xstream';
+import {VNode} from '@cycle/dom';
+
+import {Sources, Sinks} from './interfaces';
+
+export function App(sources : Sources) : Sinks {
+  // intent
+  interface Action {
+    increment : Stream<number>;
+    decrement : Stream<number>;
+  };
+  const action$ : Action = {
+    increment: sources.DOM.select('.increment').events('click').mapTo(+1),
+    decrement: sources.DOM.select('.decrement').events('click').mapTo(-1)
+  };
+
+  // model
+  interface State {
+    count : Stream<number>;
+  };
+  const state$ : State = {
+    count: (() => {
+      return xs.merge(action$.increment, action$.decrement)
+        .fold((sum, n) => sum + n, 0);
+    })()
+  };
+
+  // view
+  const vdom$ : Stream<VNode> = state$.count.map(count => {
+    return (
+      <div>
+        <h1>Counter</h1>
+        <h2>{count}</h2>
+        <button className='increment'>Increment</button>
+        <button className='decrement'>Decrement</button>
+      </div>
+    );
+  });
+
+  return {
+    DOM: vdom$
+  };
+}
+```
