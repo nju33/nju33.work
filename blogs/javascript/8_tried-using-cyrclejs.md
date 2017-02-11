@@ -7,7 +7,9 @@ Asyncに対応した[Redux](https://github.com/reactjs/redux)パッケージを�
 
 > A functional and reactive JavaScript framework for predictable code
 
-todo
+そもそも今はまだReactiveという言葉自体よく分かっていないので、説明できないのでとっとと使ってみる😓
+
+ちなみに、フレームワークを使う時、MVCやらMVVMといったそのフレームワーク推奨のパターンに従って書いたりしますが、CycleJSの場合はMVI（Model-View-Intent)らしいです。
 
 <!-- break -->
 
