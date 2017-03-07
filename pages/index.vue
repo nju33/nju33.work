@@ -9,6 +9,29 @@
       <!-- <h1 class="title">nju33</h1> -->
     </header>
 
+    <div style="margin:1em auto;text-align:center;">現在作りかけです😣😣😣😣😣</div>
+
+    <section class="section">
+      <header class="section-header">
+        <h2 class="section-title">Blog</h2>
+      </header>
+
+      <ul class="list">
+        <li v-for="item in blogs" class="card">
+          <a class="card-link" :href="`https://${item.name}.nju33.work`">
+            <section>
+              <div class="item-icon-wrapper">
+                <div class="item-icon"
+                  :style="{'background-image': `url(${item.icon})`}"></div>
+              </div>
+              <h3 class="item-name" v-text="item.name"></h3>
+              <div class="item-desc" v-html="item.desc"></div>
+            </section>
+          </a>
+        </li>
+      </ul>
+    </section>
+
     <section class="section">
       <header class="section-header">
         <h2 class="section-title">Electron Application</h2>
@@ -16,14 +39,16 @@
 
       <ul class="list">
         <li v-for="item in apps" class="card">
-          <section>
-            <div class="item-icon-wrapper">
-              <div class="item-icon"
-                :style="{'background-image': `url(${item.icon})`}"></div>
-            </div>
-            <h3 class="item-name" v-text="item.name"></h3>
-            <div class="item-desc" v-html="item.desc"></div>
-          </section>
+          <nuxt-link class="card-link" :to="`/electron-application/${item.name}`">
+            <section>
+              <div class="item-icon-wrapper">
+                <div class="item-icon"
+                  :style="{'background-image': `url(${item.icon})`}"></div>
+              </div>
+              <h3 class="item-name" v-text="item.name"></h3>
+              <div class="item-desc" v-html="item.desc"></div>
+            </section>
+          </nuxt-link>
         </li>
       </ul>
     </section>
@@ -72,6 +97,18 @@
   export default {
     data() {
       return {
+        blogs: [
+          {
+            icon: '',
+            name: 'javascript',
+            desc: 'JavaScriptでやってみたことなど。'
+          },
+          {
+            icon: '',
+            name: 'mac-app',
+            desc: '使ってみたMacAppなどの紹介。'
+          }
+        ],
         apps: [
           {
             icon: '//github.com/nju33/cama/blob/master/app/icons/icon.iconset/icon_256x256.png?raw=true',
@@ -232,6 +269,14 @@
   margin: 1em 0;
 }
 
+.card-link {
+  color: inherit;
+}
+
+.card-link:hover .item-name {
+  color: #B35C37;
+}
+
 .item-icon-wrapper {
   padding: .5em;
   background-color: #222;
@@ -249,6 +294,7 @@
   text-align: center;
   padding: .3em 0;
   margin: 0;
+  transition: .2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   /*background: #fff;*/
 }
 
