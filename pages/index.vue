@@ -3,7 +3,7 @@
     <header>
       <a href="#">
         <h1 class="title">
-          <span class="title-text">nju33</span>
+          <span class="title-text">nju33<span class="title-text-small">.ki</span></span>
         </h1>
       </a>
       <!-- <h1 class="title">nju33</h1> -->
@@ -25,7 +25,7 @@
                   :style="{'background-image': `url(${item.icon})`}"></div>
               </div>
               <h3 class="item-name" v-text="item.name"></h3>
-              <div class="item-desc" v-html="item.desc"></div>
+              <div class="item-desc" v-text="item.desc"></div>
             </section>
           </a>
         </li>
@@ -66,7 +66,7 @@
                 :style="{'background-image': `url(${item.icon})`}"></div>
             </div>
             <h3 class="item-name" v-text="item.name"></h3>
-            <div class="item-desc" v-html="item.desc"></div>
+            <div class="item-desc" v-text="item.desc"></div>
           </section>
         </li>
       </ul>
@@ -85,7 +85,26 @@
                 :style="{'background-image': `url(${item.icon})`}"></div>
             </div>
             <h3 class="item-name" v-text="item.name"></h3>
-            <div class="item-desc" v-html="item.desc"></div>
+            <div class="item-desc" v-text="item.desc"></div>
+          </section>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <header class="section-header">
+        <h2 class="section-title">NPM Package</h2>
+      </header>
+
+      <ul class="list">
+        <li v-for="item in npmPkgs" class="card">
+          <section>
+            <div class="item-icon-wrapper">
+              <div class="item-icon"
+                :style="{'background-image': `url(${item.icon})`}"></div>
+            </div>
+            <h3 class="item-name" v-text="item.name"></h3>
+            <div class="item-desc" v-text="item.desc"></div>
           </section>
         </li>
       </ul>
@@ -99,17 +118,22 @@
       return {
         blogs: [
           {
-            icon: '',
+            icon: '/images/javascript.nju33.work/icon_128x128@2x.png',
             name: 'javascript',
             desc: 'JavaScriptでやってみたことなど。'
           },
           {
-            icon: '',
+            icon: '/images/mac-app.nju33.work/icon_128x128@2x.png',
             name: 'mac-app',
             desc: '使ってみたMacAppなどの紹介。'
           }
         ],
         apps: [
+          {
+            icon: '//github.com/nju33/pocket-pocket/blob/master/app/icons/icon.iconset/icon_128x128@2x.png?raw=true',
+            name: 'Pocket Pocket',
+            desc: '複数タグで絞込検索ができる非公式Pocketアプリ。'
+          },
           {
             icon: '//github.com/nju33/cama/blob/master/app/icons/icon.iconset/icon_256x256.png?raw=true',
             name: 'Cama',
@@ -121,6 +145,11 @@
             desc: '常に一番上のWindowで表示することができる付箋ノートです。'
           },
           {
+            icon: '//github.com/nju33/eziten/blob/master/app/icons/icon.iconset/icon_128x128@2x.png?raw=true',
+            name: 'Eziten',
+            desc: '絵文字を一覧で表示できて、クリックで直ぐ様コピーできます。'
+          },
+          {
             icon: '//github.com/nju33/jogich/blob/master/app/icons/icon.iconset/icon_256x256.png?raw=true',
             name: 'Jogich',
             desc: 'ショートカットで呼び出して、簡単な操作で気になる要素のサイズを図ることができる定規です。'
@@ -128,11 +157,13 @@
           {
             icon: '//github.com/nju33/share-on/blob/master/app/icons/icon.iconset/icon_256x256.png?raw=true',
             name: 'Share On',
-            desc: [
-              'メニューバーのアイコンにファイルをドロップするだけで即座にファイルをシェアできます。',
-              '<a href="https://www.file.io/">file.io</a>のAPIを使っています。'
-            ].join('')
-          }
+            desc: 'メニューバーのアイコンにファイルをドロップするだけで即座にファイルをシェアできます。',
+          },
+          {
+            icon: '//github.com/nju33/immi/blob/master/app/icons/icon.iconset/icon_128x128@2x.png?raw=true',
+            name: 'Immi',
+            desc: 'メニューバーに画像ファイルをドロップして圧縮できるアプリ。（ただコマンドで実行する必要あり）'
+          },
         ],
         chromeExts: [
           {
@@ -151,6 +182,11 @@
             desc: 'ページURLに名前を付けて、その名前でアクセスできるようになります。'
           },
           {
+            icon: '//github.com/nju33/chrome-ll-tab/blob/master/app/icons/icon_128x128.png?raw=true',
+            name: 'Ll Tab',
+            desc: '開かれてるタブをタイトルかURLで検索して、マッチしたタブをアクティブにします。'
+          },
+          {
             icon: '//github.com/nju33/chrome-hahaki/blob/master/app/icon/icon_128.png?raw=true',
             name: 'Hahaki',
             desc: '狙った画像だけのダウンロードが可能です。'
@@ -163,9 +199,9 @@
         ],
         atomPkgs: [
           {
-            icon: '',
+            icon: '//github.com/nju33/atom-pane-browser/blob/master/images/icon_128x128@2x.png?raw=true',
             name: 'Pane Browser',
-            desc: '右のPaneに簡易的なブラウザを作ります。'
+            desc: 'ブラウザと同じようにブラウジングや開発が行えます。'
           },
           {
             icon: '',
@@ -197,6 +233,13 @@
             name: 'Tmproject',
             desc: '現在のWindowを開いてるときだけ有効なプロジェクトを作ります。'
           },
+        ],
+        npmPkgs: [
+          {
+            icon: '//github.com/nju33/hai/blob/master/images/icon_128x128@2x.png?raw=true',
+            name: 'Hai',
+            desc: 'ツールチップのような感じで、ユーザーに確認ダイアログを出したりすることができます。'
+          },
         ]
       };
     }
@@ -206,11 +249,12 @@
 <style scoped>
 .title {
   margin: 0;
-  background: url(~assets/nju33.svg);
-  background-size: 85%;
-  background-repeat: no-repeat;
+  background:
+    url(~assets/nju33.svg),
+    url(~static/images/background2.png);
+  background-repeat: no-repeat, repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: cover, 7em 7em;
   height: 13em;
   width: 100%;
   overflow: hidden;
@@ -222,17 +266,38 @@
 
 .title-text {
   position: absolute;
-  right: .5em;
-  top: .3em;
-  font-size: 2.5em;
+  /*right: 1em;*/
+  /*top: .8em;*/
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  font-size: 5em;
   text-shadow:
-    0 0 .05em #222,
-    0 0 .05em #222,
-    0 0 .05em #222,
-    0 0 .05em #222,
-    0 0 .05em #222;
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313,
+    0 .05em .02em #131313;
   color: #fff;
-  opacity: .6;
+  /*opacity: .6;*/
+}
+
+.title-text-small {
+  font-size: .25em;
+  opacity: .8;
+  color: #aaa;
 }
 
 .section {
