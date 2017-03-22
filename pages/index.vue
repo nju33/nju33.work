@@ -265,6 +265,11 @@
           },
           {
             icon: '',
+            name: 'Vue Prdiv',
+            desc: '要素を下に引っ張って更新、みたいなことができるVueComponent。'
+          },
+          {
+            icon: '',
             name: 'Diz',
             desc: '静的サイトジェネレータ。'
           },
@@ -272,6 +277,11 @@
             icon: '',
             name: 'PostCSS Namespace',
             desc: 'セレクタにプレフィックスを付けれるPostCSSプラグイン。'
+          },
+          {
+            icon: '',
+            name: 'PostCSS Preref',
+            desc: '何度も同じセレクタ部分を書かなくて済むPostCSSプラグイン'
           },
         ]
       };
