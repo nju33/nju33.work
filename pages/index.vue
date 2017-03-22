@@ -9,29 +9,6 @@
       <!-- <h1 class="title">nju33</h1> -->
     </header>
 
-    <div style="margin:1em auto;text-align:center;">現在作りかけです😣😣😣😣😣</div>
-
-    <section class="section">
-      <header class="section-header">
-        <h2 class="section-title">Blog</h2>
-      </header>
-
-      <ul class="list">
-        <li v-for="item in blogs" class="card">
-          <a class="card-link" :href="`https://${item.name}.nju33.work`">
-            <section>
-              <div class="item-icon-wrapper">
-                <div class="item-icon"
-                  :style="{'background-image': `url(${item.icon})`}"></div>
-              </div>
-              <h3 class="item-name" v-text="item.name"></h3>
-              <div class="item-desc" v-text="item.desc"></div>
-            </section>
-          </a>
-        </li>
-      </ul>
-    </section>
-
     <section class="section">
       <header class="section-header">
         <h2 class="section-title">Electron Application</h2>
@@ -109,6 +86,27 @@
         </li>
       </ul>
     </section>
+
+    <section class="section">
+      <header class="section-header">
+        <h2 class="section-title">Blog</h2>
+      </header>
+
+      <ul class="list">
+        <li v-for="item in blogs" class="card">
+          <a class="card-link" :href="`https://${item.name}.nju33.work`">
+            <section>
+              <div class="item-icon-wrapper">
+                <div class="item-icon"
+                  :style="{'background-image': `url(${item.icon})`}"></div>
+              </div>
+              <h3 class="item-name" v-text="item.name"></h3>
+              <div class="item-desc" v-text="item.desc"></div>
+            </section>
+          </a>
+        </li>
+      </ul>
+    </section>
   </section>
 </template>
 
@@ -133,6 +131,11 @@
             icon: '//github.com/nju33/pocket-pocket/blob/master/app/icons/icon.iconset/icon_128x128@2x.png?raw=true',
             name: 'Pocket Pocket',
             desc: '複数タグで絞込検索ができる非公式Pocketアプリ。'
+          },
+          {
+            icon: '//github.com/nju33/netfri/blob/master/app/icons/icon.iconset/icon_128x128@2x.png?raw=true',
+            name: 'Netfri',
+            desc: '他ウィンドウに被らないようにしたり、直ぐにマイリストから再生できるようなど、細かい点を修正した非公式Netflixアプリ。'
           },
           {
             icon: '//github.com/nju33/cama/blob/master/app/icons/icon.iconset/icon_256x256.png?raw=true',
@@ -229,7 +232,7 @@
             desc: '現在のPaneをワークスペースいっぱいに広げることができます。'
           },
           {
-            icon: '',
+            icon: '//github.com/nju33/atom-tmproject/blob/master/images/icon_128x128@2x.png?raw=true',
             name: 'Tmproject',
             desc: '現在のWindowを開いてるときだけ有効なプロジェクトを作ります。'
           },
@@ -239,6 +242,36 @@
             icon: '//github.com/nju33/hai/blob/master/images/icon_128x128@2x.png?raw=true',
             name: 'Hai',
             desc: 'ツールチップのような感じで、ユーザーに確認ダイアログを出したりすることができます。'
+          },
+          {
+            icon: '',
+            name: 'Taba',
+            desc: 'テーブル要素のヘッダーやフッターをポジション固定表示できます。'
+          },
+          {
+            icon: '',
+            name: 'Rangebar',
+            desc: 'スタイルをカスタマイズできる、input[type=range]のような要素です。'
+          },
+          {
+            icon: '',
+            name: 'Suwa',
+            desc: '簡単なレイアウトでカルーセルな要素を作ります。'
+          },
+          {
+            icon: '',
+            name: 'Mohill',
+            desc: '下から伸びるようなモーダル。'
+          },
+          {
+            icon: '',
+            name: 'Diz',
+            desc: '静的サイトジェネレータ。'
+          },
+          {
+            icon: '',
+            name: 'PostCSS Namespace',
+            desc: 'セレクタにプレフィックスを付けれるPostCSSプラグイン。'
           },
         ]
       };
