@@ -2,7 +2,8 @@
   <div class="box">
     <h2 class="headline">お問い合わせありがとうございます。</h2>
     <div class="body">
-      <p><span class="count" v-text="count"></span>秒後、前のページに戻ります。</p>
+      <p><span class="count" v-text="count"></span>秒後、前のページに戻ります。<br/>
+        &nbsp;&nbsp;戻らない場合はお手数ですが、<a href="https://nju33.work">コチラ</a>からお戻りください。</p>
     </div>
   </div>
 </template>
@@ -16,7 +17,9 @@ export default {
   },
   mounted() {
     setInterval(() => {
-      this.count--;
+      if (this.count > 0) {
+        this.count--;
+      }
       if (this.count === 0) {
         history.back();
       }
