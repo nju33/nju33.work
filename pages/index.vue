@@ -574,6 +574,14 @@
   z-index: 999;
 }
 
+.acoru-open-electron .header,
+.acoru-open-chrome .header,
+.acoru-open-atom .header,
+.acoru-open-npm .header,
+.acoru-open-blog .header {
+  z-index: -1;
+}
+
 .acoru-opened .title {
   transition: .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   width: 1.5em;
