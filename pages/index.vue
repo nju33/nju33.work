@@ -27,7 +27,7 @@
             </svg>
           </h1>
         </header>
-        <div data-acoru-id="own" class="section-body" style="display:block">
+        <div data-acoru-id="own" class="section-body" style="display:none">
           <section class="own-section">
             <h2 class="own-name">nju33 <small>佐々木純</small></h2>
             <div class="own-body">
