@@ -1125,7 +1125,7 @@
 .item-icon {
   width: 100%;
   height: 3.5em;
-  background-size: 85% 85%;
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -1149,7 +1149,7 @@
 
 @media (min-width: 425px) {
   .item-icon {
-    height: 6em;
+    height: 5em;
   }
 
   .item-body {
