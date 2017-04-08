@@ -1040,7 +1040,7 @@
 .list {
   position: absolute;
   z-index: -1;
-  width: 71vw;
+  width: 77vw;
   bottom: 50%;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
@@ -1055,6 +1055,7 @@
   padding-left: 0;
   -webkit-transition: .2s cubic-bezier(0.6, 0.04, 0.98, 0.335) .4s;
   transition: .2s cubic-bezier(0.6, 0.04, 0.98, 0.335) .4s;
+  max-height: 100vh;
 }
 
 .acoru-not-open .list {
