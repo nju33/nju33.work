@@ -658,6 +658,16 @@
   background: transparent;
 }
 
+.acoru-open.acoru-open-own .section-header {
+  transform: translate(50%, 0);
+  right: -1em;
+  bottom: 50%;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: transparent;
+}
+
 .acoru-open .section-header svg {
   fill: rgba(255,255,255,.7);
   transition: .2s;
@@ -672,33 +682,33 @@
 }
 
 .acoru-open .section-header.electron {
-  right: 1em;
+  /*right: 1em;*/
   bottom: calc(50% + 5em);
   transition-delay: .3s;
   /*top: 5em;*/
   /*background: orange;*/
 }
 .acoru-open .section-header.chrome {
-  right: 1em;
+  /*right: 1em;*/
   bottom: calc(50% + 2.5em);
   transition-delay: .1s;
   /*background: blue;*/
 }
 .acoru-open .section-header.atom {
-  right: 1em;
+  /*right: 1em;*/
   bottom: 50%;
   transition-delay: .15s;
   /*background: pink;*/
 }
 .acoru-open .section-header.npm {
-  right: 1em;
+  /*right: 1em;*/
   transition-delay: .2s;
   /*top: 5em;*/
   bottom: calc(50% - 2.5em);
   /*background: #222;*/
 }
 .acoru-open .section-header.blog {
-  right: 1em;
+  /*right: 1em;*/
   transition-delay: .24s;
   bottom: calc(50% - 5em);
   /*top: 5em;*/
@@ -732,12 +742,15 @@
 .section-body,
 .list-wrapper {
   width: 100%;
+  max-width: 90%;
   padding: 0 1em;
+  overflow: hidden;
 }
 
 @media (min-width: 425px){
   .section-body,
   .list-wrapper {
+    max-width: auto;
     width: 71vw;
     padding: 0 calc((100% - 71vw) / 2);
   }

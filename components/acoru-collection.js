@@ -266,10 +266,12 @@ export default class AcoruCollection {
 
       this.parent.classList.remove('acoru-not-open');
       this.parent.classList.add('acoru-open');
+      this.parent.classList.add(`acoru-open-${this.name}`);
     }, 0);
   }
 
   close() {
+    const currentCollection = this.acoru.getActiveCollection(this.acoru.uid);
     this.root.classList.add('acoru-close');
     this.acoru.getEvent('close').forEach(ev => {
       ev(this);
@@ -283,6 +285,7 @@ export default class AcoruCollection {
       });
 
       this.root.classList.remove('acoru-opened');
+      this.parent.classList.remove(`acoru-open-${currentCollection.name}`);
       this.active = false;
 
       const activeCollection = this.acoru.getActiveCollection(this.acoru.uid);
