@@ -46,6 +46,7 @@ textarea {
   background: rgba(255,255,255,.4);
   outline: none;
   box-sizing: border-box;
+  -webkit-transition: .4s;
   transition: .4s;
 }
 

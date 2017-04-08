@@ -86,7 +86,8 @@
         <div class="list-wrapper" data-acoru-id="electron" style="display:none">
           <ul class="list">
             <li v-for="item in apps" class="card">
-              <nuxt-link class="card-link" :to="`/electron-application/${item.name}`">
+              <!-- <nuxt-link class="card-link" :to="`/electron-application/${item.name}`"> -->
+              <a class="card-link" :href="item.url">
                 <section>
                   <div class="item-icon-wrapper">
                     <div class="item-icon"
@@ -97,7 +98,8 @@
                     <div class="item-desc" v-html="item.desc"></div>
                   </div>
                 </section>
-              </nuxt-link>
+              </a>
+              <!-- </nuxt-link> -->
             </li>
           </ul>
         </div>
@@ -124,16 +126,18 @@
         <div class="list-wrapper" data-acoru-id="chrome" style="display:none">
           <ul class="list">
             <li v-for="item in chromeExts" class="card">
-              <section>
-                <div class="item-icon-wrapper">
-                  <div class="item-icon"
-                    :style="{'background-image': `url(${item.icon})`}"></div>
-                </div>
-                <div class="item-body">
-                  <h3 class="item-name" v-text="item.name"></h3>
-                  <div class="item-desc" v-text="item.desc"></div>
-                </div>
-              </section>
+              <a class="card-link" :href="item.url">
+                <section>
+                  <div class="item-icon-wrapper">
+                    <div class="item-icon"
+                      :style="{'background-image': `url(${item.icon})`}"></div>
+                  </div>
+                  <div class="item-body">
+                    <h3 class="item-name" v-text="item.name"></h3>
+                    <div class="item-desc" v-text="item.desc"></div>
+                  </div>
+                </section>
+              </a>
             </li>
           </ul>
         </div>
@@ -160,16 +164,18 @@
         <div class="list-wrapper" data-acoru-id="atom" style="display:none">
           <ul class="list">
             <li v-for="item in atomPkgs" class="card">
-              <section>
-                <div class="item-icon-wrapper">
-                  <div class="item-icon"
-                    :style="{'background-image': `url(${item.icon})`}"></div>
-                </div>
-                <div class="item-body">
-                  <h3 class="item-name" v-text="item.name"></h3>
-                  <div class="item-desc" v-text="item.desc"></div>
-                </div>
-              </section>
+              <a class="card-link" :href="item.url">
+                <section>
+                  <div class="item-icon-wrapper">
+                    <div class="item-icon"
+                      :style="{'background-image': `url(${item.icon})`}"></div>
+                  </div>
+                  <div class="item-body">
+                    <h3 class="item-name" v-text="item.name"></h3>
+                    <div class="item-desc" v-text="item.desc"></div>
+                  </div>
+                </section>
+              </a>
             </li>
           </ul>
         </div>
@@ -196,16 +202,18 @@
         <div class="list-wrapper" data-acoru-id="npm" style="display:none">
           <ul class="list">
             <li v-for="item in npmPkgs" class="card">
-              <section>
-                <div class="item-icon-wrapper">
-                  <div class="item-icon"
-                    :style="{'background-image': `url(${item.icon})`}"></div>
-                </div>
-                <div class="item-body">
-                  <h3 class="item-name" v-text="item.name"></h3>
-                  <div class="item-desc" v-text="item.desc"></div>
-                </div>
-              </section>
+              <a class="card-link" :href="item.url">
+                <section>
+                  <div class="item-icon-wrapper">
+                    <div class="item-icon"
+                      :style="{'background-image': `url(${item.icon})`}"></div>
+                  </div>
+                  <div class="item-body">
+                    <h3 class="item-name" v-text="item.name"></h3>
+                    <div class="item-desc" v-text="item.desc"></div>
+                  </div>
+                </section>
+              </a>
             </li>
           </ul>
         </div>
@@ -233,7 +241,7 @@
         <div class="list-wrapper" data-acoru-id="blog" style="display:none">
           <ul class="list">
             <li v-for="item in blogs" class="card">
-              <a class="card-link" :href="`https://${item.name}.nju33.work`">
+              <a class="card-link" :href="item.url">
                 <section>
                   <div class="item-icon-wrapper">
                     <div class="item-icon"
@@ -352,11 +360,13 @@
           {
             icon: '/images/javascript.nju33.work/icon_128x128@2x.png',
             name: 'javascript',
+            url: 'https://javascript.nju33.work'
             // desc: 'JavaScriptでやってみたことなど。'
           },
           {
             icon: '/images/mac-app.nju33.work/icon_128x128@2x.png',
             name: 'mac-app',
+            url: 'https://mac-app.nju33.work'
             // desc: '使ってみたMacAppなどの紹介。'
           }
         ],
@@ -364,41 +374,50 @@
           {
             icon: '//github.com/nju33/pocket-pocket/blob/master/app/icons/icon.iconset/icon_128x128@2x.png?raw=true',
             name: 'Pocket Pocket',
+            url: 'https://github.com/nju33/pocket-pocket'
             // desc: '複数タグで絞込検索ができる非公式Pocketアプリ。'
           },
           {
             icon: '//github.com/nju33/netfri/blob/master/app/icons/icon.iconset/icon_128x128@2x.png?raw=true',
             name: 'Netfri',
+            url: 'https://github.com/nju33/netfri'
             // desc: '他ウィンドウに被らないようにしたり、直ぐにマイリストから再生できるようなど、細かい点を修正した非公式Netflixアプリ。'
           },
           {
             icon: '//github.com/nju33/cama/blob/master/app/icons/icon.iconset/icon_256x256.png?raw=true',
             name: 'Cama',
+            url: 'https://github.com/nju33/cama'
             // desc: 'ショートカットで直ぐさま表示して、テキスト計算が行えます。'
           },
           {
             icon: '//github.com/nju33/fusen/blob/master/app/icons/icon.iconset/icon_256x256.png?raw=true',
             name: 'Fusen',
+            url: 'https://github.com/nju33/fusen'
             // desc: '常に一番上のWindowで表示することができる付箋ノートです。'
           },
           {
             icon: '//github.com/nju33/eziten/blob/master/app/icons/icon.iconset/icon_128x128@2x.png?raw=true',
             name: 'Eziten',
+            url: 'https://github.com/nju33/eziten'
+            // desc: '常に一番上のWindowで表示することができる付箋ノートです。'
             // desc: '絵文字を一覧で表示できて、クリックで直ぐ様コピーできます。'
           },
           {
             icon: '//github.com/nju33/jogich/blob/master/app/icons/icon.iconset/icon_256x256.png?raw=true',
             name: 'Jogich',
+            url: 'https://github.com/nju33/jogich'
             // desc: 'ショートカットで呼び出して、簡単な操作で気になる要素のサイズを図ることができる定規です。'
           },
           {
             icon: '//github.com/nju33/share-on/blob/master/app/icons/icon.iconset/icon_256x256.png?raw=true',
             name: 'Share On',
+            url: 'https://github.com/nju33/share-on'
             // desc: 'メニューバーのアイコンにファイルをドロップするだけで即座にファイルをシェアできます。',
           },
           {
             icon: '//github.com/nju33/immi/blob/master/app/icons/icon.iconset/icon_128x128@2x.png?raw=true',
             name: 'Immi',
+            url: 'https://github.com/nju33/immi'
             // desc: 'メニューバーに画像ファイルをドロップして圧縮できるアプリ。（ただコマンドで実行する必要あり）'
           },
         ],
@@ -406,31 +425,37 @@
           {
             icon: '//github.com/nju33/chrome-tab-limiter/blob/master/dev/icon/icon_128.png?raw=true',
             name: 'Tab Limiter',
+            url: 'https://github.com/nju33/chrome-tab-limiter'
             // desc: 'タブの数に制限を持たせるることで、事前にChromeの不具合を防ぎます。'
           },
           {
             icon: '//github.com/nju33/chrome-owloom/blob/master/extension/icons/icon_128x128.png?raw=true',
             name: 'Owloom',
+            url: 'https://github.com/nju33/chrome-owloom'
             // desc: 'より良くChromeのブックマークを活用するための拡張です。'
           },
           {
             icon: '//github.com/nju33/chrome-ll/blob/master/app/icons/icon128.png?raw=true',
             name: 'Ll',
+            url: 'https://github.com/nju33/chrome-ll'
             // desc: 'ページURLに名前を付けて、その名前でアクセスできるようになります。'
           },
           {
             icon: '//github.com/nju33/chrome-ll-tab/blob/master/app/icons/icon_128x128.png?raw=true',
             name: 'Ll Tab',
+            url: 'https://github.com/nju33/chrome-ll-tab'
             // desc: '開かれてるタブをタイトルかURLで検索して、マッチしたタブをアクティブにします。'
           },
           {
             icon: '//github.com/nju33/chrome-hahaki/blob/master/app/icon/icon_128.png?raw=true',
             name: 'Hahaki',
+            url: 'https://github.com/nju33/chrome-hahaki'
             // desc: '狙った画像だけのダウンロードが可能です。'
           },
           {
             icon: '',
             name: 'Like One Dark Theme',
+            url: 'https://github.com/nju33/chrome-like-one-dark-theme'
             // desc: 'AtomのOneDarkのようなテーマ。'
           },
         ],
@@ -438,36 +463,43 @@
           {
             icon: '//github.com/nju33/atom-pane-browser/blob/master/images/icon_128x128@2x.png?raw=true',
             name: 'Pane Browser',
+            url: 'https://github.com/nju33/atom-pane-browser'
             // desc: 'ブラウザと同じようにブラウジングや開発が行えます。'
           },
           {
             icon: '',
             name: 'Google Translate Modal',
+            url: 'https://github.com/nju33/atom-google-translate-moda'
             // desc: 'ショートカットで直ぐさまGoogleTranslateページを開きます。'
           },
           {
             icon: '//github.com/nju33/atom-colorio/blob/master/media/icon_512x512.png?raw=true',
             name: 'Colorio',
+            url: 'https://github.com/nju33/atom-colorio'
             // desc: '調べたい色について詳細を見ることができます。'
           },
           {
             icon: '',
             name: 'Flex Tab Bar',
+            url: 'https://github.com/nju33/atom-flex-tab-bar'
             // desc: 'タブバーをFlex化します。'
           },
           {
             icon: '',
             name: 'Tab Limiter',
+            url: 'https://github.com/nju33/atom-tab-limiter'
             // desc: 'タブ数に上限を設定します。'
           },
           {
             icon: '',
             name: 'Maximize Space Pane',
+            url: 'https://github.com/nju33/atom-maximaize-space-pane'
             // desc: '現在のPaneをワークスペースいっぱいに広げることができます。'
           },
           {
             icon: '//github.com/nju33/atom-tmproject/blob/master/images/icon_128x128@2x.png?raw=true',
             name: 'Tmproject',
+            url: 'https://github.com/nju33/atom-tmproject'
             // desc: '現在のWindowを開いてるときだけ有効なプロジェクトを作ります。'
           },
         ],
@@ -475,46 +507,67 @@
           {
             icon: '//github.com/nju33/hai/blob/master/images/icon_128x128@2x.png?raw=true',
             name: 'Hai',
+            url: 'https://github.com/nju33/hai'
             // desc: 'ツールチップのような感じで、ユーザーに確認ダイアログを出したりすることができます。'
           },
           {
             icon: '',
             name: 'Taba',
+            url: 'https://github.com/nju33/taba'
             // desc: 'テーブル要素のヘッダーやフッターをポジション固定表示できます。'
           },
           {
             icon: '',
             name: 'Rangebar',
+            url: 'https://github.com/nju33/rangebar'
             // desc: 'スタイルをカスタマイズできる、input[type=range]のような要素です。'
           },
           {
             icon: '',
             name: 'Suwa',
+            url: 'https://github.com/nju33/suwa'
             // desc: '簡単なレイアウトでカルーセルな要素を作ります。'
           },
           {
             icon: '',
             name: 'Mohill',
+            url: 'https://github.com/nju33/mohill'
             // desc: '下から伸びるようなモーダル。'
           },
           {
             icon: '',
             name: 'Vue Prdiv',
+            url: 'https://github.com/nju33/vue-prediv'
             // desc: '要素を下に引っ張って更新、みたいなことができるVueComponent。'
           },
           {
             icon: '',
             name: 'Diz',
+            url: 'https://github.com/nju33/diz'
             // desc: '静的サイトジェネレータ。'
           },
           {
             icon: '',
+            name: 'PostCSS Octicon',
+            url: 'https://github.com/nju33/postcss-octicon'
+            // desc: 'セレクタにプレフィックスを付けれるPostCSSプラグイン。'
+          },
+          {
+            icon: '',
+            name: 'PostCSS Blokk',
+            url: 'https://github.com/nju33/postcss-blokk'
+            // desc: 'セレクタにプレフィックスを付けれるPostCSSプラグイン。'
+          },
+          {
+            icon: '',
             name: 'PostCSS Namespace',
+            url: 'https://github.com/nju33/postcss-namespace'
             // desc: 'セレクタにプレフィックスを付けれるPostCSSプラグイン。'
           },
           {
             icon: '',
             name: 'PostCSS Preref',
+            url: 'https://github.com/nju33/postcss-preref'
             // desc: '何度も同じセレクタ部分を書かなくて済むPostCSSプラグイン'
           },
         ]
@@ -538,7 +591,11 @@
   position: absolute;
   width: 100%;
   top: calc(50% - 8em);
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+
+  -webkit-transition: background .2s linear,
+    .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) .2s;
 
   transition:
     background .2s linear,
@@ -552,11 +609,14 @@
   font-size: 1em;
   height: 5em;
   width: 5em;
+  -webkit-transition: .4s cubic-bezier(0.55, 0.085, 0.68, 0.53) .2s;
   transition: .4s cubic-bezier(0.55, 0.085, 0.68, 0.53) .2s;
   cursor: pointer;
 }
 
 .acoru-open .header {
+  -webkit-transition: .2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
+    z-index .1s linear .4s;
   transition:
     .2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
     z-index .1s linear .4s;
@@ -564,6 +624,8 @@
 }
 
 .acoru-opened .header {
+  -webkit-transition: .6s cubic-bezier(0.55, 0.085, 0.68, 0.53),
+    background .2s linear .6s;
   transition:
     .6s cubic-bezier(0.55, 0.085, 0.68, 0.53),
     background .2s linear .6s;
@@ -583,6 +645,7 @@
 }
 
 .acoru-opened .title {
+  -webkit-transition: .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   transition: .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   width: 1.5em;
   height: 1.5em;
@@ -622,12 +685,17 @@
   position: fixed;
   right: 50%;
   bottom: 50%;
-  transform: translate(50%, 50%);
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
   width: 3em;
   height: 3em;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   z-index: 9999;
   cursor: pointer;
+  -webkit-transition: .4s cubic-bezier(0.455, 0.03, 0.515, 0.955) .2s;
   transition: .4s cubic-bezier(0.455, 0.03, 0.515, 0.955) .2s;
 }
 
@@ -657,7 +725,8 @@
 }
 
 .acoru-open .section-header {
-  transform: translate(50%, 0);
+  -webkit-transform: translate(50%, 0);
+          transform: translate(50%, 0);
   right: 1em;
   bottom: 50%;
   width: 2em;
@@ -667,7 +736,8 @@
 }
 
 .acoru-open.acoru-open-own .section-header {
-  transform: translate(50%, 0);
+  -webkit-transform: translate(50%, 0);
+          transform: translate(50%, 0);
   right: -1em;
   bottom: 50%;
   width: 2em;
@@ -678,6 +748,7 @@
 
 .acoru-open .section-header svg {
   fill: rgba(255,255,255,.7);
+  -webkit-transition: .2s;
   transition: .2s;
 }
 
@@ -692,32 +763,37 @@
 .acoru-open .section-header.electron {
   /*right: 1em;*/
   bottom: calc(50% + 5em);
-  transition-delay: .3s;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
   /*top: 5em;*/
   /*background: orange;*/
 }
 .acoru-open .section-header.chrome {
   /*right: 1em;*/
   bottom: calc(50% + 2.5em);
-  transition-delay: .1s;
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
   /*background: blue;*/
 }
 .acoru-open .section-header.atom {
   /*right: 1em;*/
   bottom: 50%;
-  transition-delay: .15s;
+  -webkit-transition-delay: .15s;
+          transition-delay: .15s;
   /*background: pink;*/
 }
 .acoru-open .section-header.npm {
   /*right: 1em;*/
-  transition-delay: .2s;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
   /*top: 5em;*/
   bottom: calc(50% - 2.5em);
   /*background: #222;*/
 }
 .acoru-open .section-header.blog {
   /*right: 1em;*/
-  transition-delay: .24s;
+  -webkit-transition-delay: .24s;
+          transition-delay: .24s;
   bottom: calc(50% - 5em);
   /*top: 5em;*/
   /*background: red;*/
@@ -732,9 +808,15 @@
   padding: 15%;
   box-sizing: border-box;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .section-title svg {
@@ -771,9 +853,13 @@
 }
 
 .own-section.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  align-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 /*@media (min-width: 425px) {*/
@@ -798,7 +884,9 @@
   font-size: 3em;
   font-weight: lighter;
   /*margin: -3em 0;*/
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 1px solid;
 }
 
@@ -815,16 +903,21 @@
 
 @media (max-width: 424px) {
   .skill-tables {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
 .skill-tables {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .skill-table {
-  flex: 1 1 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
 }
 
 .skill-table:first-child {
@@ -856,6 +949,7 @@
 
 .skill-progress:before {
   content: '';
+  background: -webkit-linear-gradient(left, rgba(255,255,255,.4), rgba(255,255,255,.4), rgba(255,255,255,.4), transparent);
   background: linear-gradient(to right, rgba(255,255,255,.4), rgba(255,255,255,.4), rgba(255,255,255,.4), transparent);
   height: 1.2em;
   position: absolute;
@@ -863,7 +957,8 @@
   bottom: 50%;
   border-left: 1px solid #fff;
   /*border-right: 1px solid #fff;*/
-  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
 }
 
 .skill-progress-js:before {
@@ -896,17 +991,23 @@
   z-index: -1;
   width: 71vw;
   bottom: 50%;
-  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none;
   margin: 0 auto;
   opacity: 0;
   padding-left: 0;
+  -webkit-transition: .2s cubic-bezier(0.6, 0.04, 0.98, 0.335) .4s;
   transition: .2s cubic-bezier(0.6, 0.04, 0.98, 0.335) .4s;
 }
 
 .acoru-not-open .list {
+  -webkit-transition: .2s linear;
   transition: .2s linear;
   z-index: 0;
   opacity: 0;
@@ -918,7 +1019,9 @@
 }
 
 .card {
-  flex: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
   max-width: calc(33.3333% - .2em);
   min-width: calc(33.3333% - .2em);
   box-sizing: border-box;
@@ -934,10 +1037,30 @@
 
 .card-link {
   color: inherit;
+  display: block;
+  -webkit-transition: .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.card-link:hover .item-name {
-  color: #B35C37;
+.card-link:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.electron .card-link:hover .item-name {
+  color: #0d98ba;
+}
+.chrome .card-link:hover .item-name {
+  color: #ffaa1d;
+}
+.atom .card-link:hover .item-name {
+  color: #ad6f69;
+}
+.npm .card-link:hover .item-name {
+  color: #D05340;
+}
+.blog .card-link:hover .item-name {
+  color: #828e84;
 }
 
 .item-icon-wrapper {
@@ -958,9 +1081,15 @@
 .item-body {
   position: relative;
   height: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: rgba(255,255,255,.8);
   font-size: 11px;
 }
@@ -983,6 +1112,8 @@
   font-size: .85em;
   text-align: center;
   font-weight: lighter;
+  -webkit-transition: .2s;
+  transition: .2s;
   /*text-align: center;
   padding: .3em 0;
   margin: 0;
@@ -1002,7 +1133,9 @@
   position: absolute;
   right: 50%;
   bottom: 1em;
-  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  -webkit-transition: .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
@@ -1012,9 +1145,15 @@
 }
 
 .footer-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .footer-link {
@@ -1027,6 +1166,7 @@
 .footer-link svg {
   width: 100%;
   fill: #888;
+  -webkit-transition: .2s;
   transition: .2s
 }
 
