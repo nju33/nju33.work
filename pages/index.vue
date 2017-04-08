@@ -1072,8 +1072,8 @@
 
 .card {
   -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
+  -ms-flex: 1 1 calc(33.3333% - .2em);
+  flex: 1 1 calc(33.3333% - .2em);
   max-width: calc(33.3333% - .2em);
   min-width: calc(33.3333% - .2em);
   box-sizing: border-box;
