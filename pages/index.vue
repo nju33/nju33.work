@@ -4,27 +4,66 @@
       :onopened="onopened"
       :onclosed="onclosed"
       >
-      <header class="header">
-        <h1 class="title">
-          <svg
-              width="100%"
-              height="100%"
-              viewBox="0 0 225 225"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xml:space="preserve"
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-              <g>
-                <title>nju33</title>
-                <path d="M0,0l150,225l-150,0l0,-225Z" style="fill:#77b6cb;"/>
-                  <clipPath id="_clip1"><path d="M0,0l150,225l-150,0l0,-225Z"/></clipPath>
-                  <g clip-path="url(#_clip1)"><path d="M15.221,-45l-159.099,159.099l127.279,127.279l159.099,-159.099l-127.279,-127.279Z" style="fill:#777ccb;"/><path d="M184.903,16.654l-175.37,-101.25l-75,129.904l175.37,101.25l75,-129.904Z" style="fill:#d364af;"/></g>
-                  <g><path d="M225,112.5l0,112.5l-81.881,0l81.881,-112.5Z" style="fill:#f6eb00;"/><path d="M150,105l75,120l-150,0l75,-120Z" style="fill:#dc5d62;"/><path d="M187.172,164.474l37.828,60.526l-81.881,0l44.053,-60.526Z" style="fill:#f8a500;"/><path d="M111.29,166.935l38.71,58.065l-75,0l36.29,-58.065Z" style="fill:#3a9d7b;"/></g>
-              </g>
-          </svg>
-        </h1>
-      </header>
+
+      <div>
+        <header class="header" data-acoru-for="own">
+          <h1 class="title">
+            <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 225 225"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xml:space="preserve"
+                style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                <g>
+                  <title>nju33</title>
+                  <path d="M0,0l150,225l-150,0l0,-225Z" style="fill:#77b6cb;"/>
+                    <clipPath id="_clip1"><path d="M0,0l150,225l-150,0l0,-225Z"/></clipPath>
+                    <g clip-path="url(#_clip1)"><path d="M15.221,-45l-159.099,159.099l127.279,127.279l159.099,-159.099l-127.279,-127.279Z" style="fill:#777ccb;"/><path d="M184.903,16.654l-175.37,-101.25l-75,129.904l175.37,101.25l75,-129.904Z" style="fill:#d364af;"/></g>
+                    <g><path d="M225,112.5l0,112.5l-81.881,0l81.881,-112.5Z" style="fill:#f6eb00;"/><path d="M150,105l75,120l-150,0l75,-120Z" style="fill:#dc5d62;"/><path d="M187.172,164.474l37.828,60.526l-81.881,0l44.053,-60.526Z" style="fill:#f8a500;"/><path d="M111.29,166.935l38.71,58.065l-75,0l36.29,-58.065Z" style="fill:#3a9d7b;"/></g>
+                </g>
+            </svg>
+          </h1>
+        </header>
+        <div data-acoru-id="own" class="section-body">
+          <section class="own-section">
+            <h2 class="own-name">nju33 <small>佐々木純</small></h2>
+            <div class="own-body">
+              <p>
+                JavaScriptがあれば永遠に暇にならない。<br/>
+                朝に「あ、こうゆうの作りたいな」と思ったことが、夜までには作れちゃうような所が好きです。<br/>
+                あと、お金が掛からない所😇
+              </p>
+              <div class="skill-tables">
+                <div class="skill-table">
+                  <h3>😆</h3>
+                  <ul>
+                    <li class="skill-progress skill-progress-js">JavaScript</li>
+                    <li class="skill-progress skill-progress-css">CSS3</li>
+                    <li class="skill-progress skill-progress-html">HTML5.1</li>
+                    <li class="skill-progress skill-progress-wp">Wordpress</li>
+                    <li class="skill-progress skill-progress-ad">Affinity Designer</li>
+                    <li class="skill-progress skill-progress-csp">Clip Studio Paint</li>
+                    <li class="skill-progress skill-progress-sketch">Sketch</li>
+                  </ul>
+                </div>
+                <div class="skill-table">
+                  <h3>😡</h3>
+                  <ul>
+                    <li class="skill-progress skill-progress-scala">Scala</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="own-section flex">
+            <h2 class="own-name">お問い合わせ <small>すべて必須項目です</small></h2>
+            <Form/>
+          </div>
+        </div>
+      </div>
 
       <section class="section electron">
         <header class="section-header electron" data-acoru-for="electron">
@@ -251,16 +290,23 @@
 
 <script>
   import createHistory from 'history/createBrowserHistory';
+  import loadjs from 'loadjs';
   import Acoru from '~components/Acoru.vue';
+  import Form from '~components/Form.vue';
 
   export default {
     components: {
-      Acoru
+      Acoru,
+      Form
     },
     methods: {
       onopened(collection) {
         if (this.touchHistory) {
           this.history.push(`#${collection.name}`, {some: 'state'})
+        }
+        if (!this.loadedFormrun && collection.name === 'own') {
+          loadjs(['https://sdk.form.run/js/v2/formrun.js']);
+          this.laodedFormrun = true;
         }
         this.touchHistory = true;
       },
@@ -282,7 +328,12 @@
           }
         }, 0)
       });
+
       if (this.history.location.hash) {
+        if (this.history.location.hash === '#own') {
+          loadjs(['https://sdk.form.run/js/v2/formrun.js']);
+          this.laodedFormrun = true;
+        }
         setTimeout(() => {
           this.$refs.acoru.open(this.history.location.hash.slice(1));
         }, 100);
@@ -292,6 +343,7 @@
       return {
         history: null,
         touchHistory: true,
+        loadedFormrun: false,
         acoruOpts: {
           transitionDuration: '.4s',
           transitionTimingFunction: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)'
@@ -484,65 +536,48 @@
 
 .header {
   position: absolute;
-  right: 50%;
-  bottom: calc(50% + 8em);
-  transform: translate(50%, 50%);
-  height: 5em;
-  width: 5em;
-  transition: .2s linear .4s;
-}
+  width: 100%;
+  top: calc(50% - 8em);
+  transform: translateY(-50%);
 
-.acoru-open .header {
-  transition: .2s linear;
-  opacity: 0;
-  z-index: 0;
+  transition:
+    background .2s linear,
+    .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) .2s;
+  opacity: 1;
+  z-index: 999;
 }
 
 .title {
-  /*margin: 0;
-  background:
-    url(~assets/nju33.svg),
-    url(~static/images/background2.png);
-  background-repeat: no-repeat, repeat;
-  background-position: center center;
-  background-size: cover, 7em 7em;
-  height: 13em;
-  width: 100%;
-  overflow: hidden;
-  position: relative;*/
-  /*display: flex;*/
-  /*align-items: center;*/
-  /*justify-content: center;*/
+  margin: 0 auto;
+  font-size: 1em;
+  height: 5em;
+  width: 5em;
+  transition: .4s cubic-bezier(0.55, 0.085, 0.68, 0.53) .2s;
+  cursor: pointer;
 }
 
-.title-text {
-  position: absolute;
-  /*right: 1em;*/
-  /*top: .8em;*/
-  right: 50%;
-  bottom: 50%;
-  transform: translate(50%, 50%);
-  font-size: 5em;
-  text-shadow:
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313,
-    0 .05em .02em #131313;
-  color: #fff;
-  /*opacity: .6;*/
+.acoru-open .header {
+  transition:
+    .2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
+    z-index .1s linear .4s;
+  opacity: 0;
+}
+
+.acoru-opened .header {
+  transition:
+    .6s cubic-bezier(0.55, 0.085, 0.68, 0.53),
+    background .2s linear .6s;
+  background: rgba(255,255,255,.4);
+  top: 1.2em;
+  padding: .5em 0;
+  opacity: 1;
+  z-index: 999;
+}
+
+.acoru-opened .title {
+  transition: .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  width: 1.5em;
+  height: 1.5em;
 }
 
 .title-text-small {
@@ -694,9 +729,145 @@
   margin: 0;
 }
 
+.section-body,
 .list-wrapper {
-  width: 71vw;
-  padding: 0 calc((100% - 71vw) / 2);
+  width: 100%;
+  padding: 0 1em;
+}
+
+@media (min-width: 425px){
+  .section-body,
+  .list-wrapper {
+    width: 71vw;
+    padding: 0 calc((100% - 71vw) / 2);
+  }
+}
+
+.own-section {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 1em 0;
+}
+
+.own-section.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+/*@media (min-width: 425px) {*/
+.flex .own-name {
+  margin-top: -50vh;
+  padding-top: 50vw;
+}
+/*}*/
+
+@media (min-width: 900px) {
+  .flex .own-name {
+    margin-top: -50vh;
+    padding-top: 5em;
+  }
+}
+
+.own-name {
+  width: 100%;
+  /*max-height: 2em;*/
+  padding: .5em 1rem;
+  box-sizing: border-box;
+  font-size: 3em;
+  font-weight: lighter;
+  /*margin: -3em 0;*/
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+.own-name small {
+  font-size: .4em;
+  position: relative;
+  top: -.15em;
+}
+
+.own-body {
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+@media (max-width: 424px) {
+  .skill-tables {
+    flex-wrap: wrap;
+  }
+}
+
+.skill-tables {
+  display: flex;
+}
+
+.skill-table {
+  flex: 1 1 100%;
+}
+
+.skill-table:first-child {
+  margin-right: .5em;
+}
+
+.skill-table:last-child {
+  margin-left: .5em;
+}
+
+.skill-table h3 {
+  font-size: 1em;
+  background: rgba(255,255,255,.4);
+  padding: .3em;
+  /*border: 1px solid;*/
+  /*color: #fff;*/
+}
+
+.skill-table ul {
+  line-height: 1.8;
+  list-style: none;
+  padding-left: .5em;
+}
+
+.skill-progress {
+  position: relative;
+  padding: 0 .25em;
+}
+
+.skill-progress:before {
+  content: '';
+  background: linear-gradient(to right, rgba(255,255,255,.4), rgba(255,255,255,.4), rgba(255,255,255,.4), transparent);
+  height: 1.2em;
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  border-left: 1px solid #fff;
+  /*border-right: 1px solid #fff;*/
+  transform: translateY(50%);
+}
+
+.skill-progress-js:before {
+  width: 86%;
+}
+.skill-progress-html:before {
+  width: 81%;
+}
+.skill-progress-wp:before {
+  width: 58%;
+}
+.skill-progress-css:before {
+  width: 85%;
+}
+.skill-progress-csp:before {
+  width: 50%;
+}
+.skill-progress-ad:before {
+  width: 50%;
+}
+.skill-progress-sketch:before {
+  width: 35%;
+}
+.skill-progress-scala:before {
+  width: 15%;
 }
 
 .list {
@@ -710,6 +881,7 @@
   list-style: none;
   margin: 0 auto;
   opacity: 0;
+  padding-left: 0;
   transition: .2s cubic-bezier(0.6, 0.04, 0.98, 0.335) .4s;
 }
 
@@ -726,12 +898,17 @@
 
 .card {
   flex: auto;
-  max-width: calc(16.6666% - .2em);
-  min-width: calc(16.6666% - .2em);
+  max-width: calc(33.3333% - .2em);
+  min-width: calc(33.3333% - .2em);
   box-sizing: border-box;
   margin: .1em .1em;
-  /*background: #fff;*/
-  /*background: rgba(0,0,0,.4);*/
+}
+
+@media (min-width: 425px) {
+  .card {
+    max-width: calc(16.6666% - .2em);
+    min-width: calc(16.6666% - .2em);
+  }
 }
 
 .card-link {
@@ -748,10 +925,11 @@
   background: rgba(0,0,0,.4);
 }
 
+
 .item-icon {
   width: 100%;
-  height: 6em;
-  background-size: 5em;
+  height: 3.5em;
+  background-size: 85% 85%;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -763,6 +941,19 @@
   align-items: center;
   justify-content: center;
   background: rgba(255,255,255,.8);
+  font-size: 11px;
+}
+
+
+@media (min-width: 425px) {
+  .item-icon {
+    height: 6em;
+  }
+
+  .item-body {
+    height: 3em;
+    font-size: .85em;
+  }
 }
 
 .item-name {

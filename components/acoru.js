@@ -95,7 +95,6 @@ export default class Acoru {
 
   getActiveCollection(uid) {
     return this.collections.find(collection => {
-      console.log(collection.acoru.uid === uid && collection.active);
       return collection.acoru.uid === uid && collection.active;
     }) || null;
   }
