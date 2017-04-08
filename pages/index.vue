@@ -453,7 +453,7 @@
             // desc: '狙った画像だけのダウンロードが可能です。'
           },
           {
-            icon: '',
+            icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Google_Chrome_icon_%282011%29.svg',
             name: 'Like One Dark Theme',
             url: 'https://github.com/nju33/chrome-like-one-dark-theme'
             // desc: 'AtomのOneDarkのようなテーマ。'
@@ -467,7 +467,7 @@
             // desc: 'ブラウザと同じようにブラウジングや開発が行えます。'
           },
           {
-            icon: '',
+            icon: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Atom_editor_logo.svg',
             name: 'Google Translate Modal',
             url: 'https://github.com/nju33/atom-google-translate-moda'
             // desc: 'ショートカットで直ぐさまGoogleTranslateページを開きます。'
@@ -479,19 +479,19 @@
             // desc: '調べたい色について詳細を見ることができます。'
           },
           {
-            icon: '',
+            icon: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Atom_editor_logo.svg',
             name: 'Flex Tab Bar',
             url: 'https://github.com/nju33/atom-flex-tab-bar'
             // desc: 'タブバーをFlex化します。'
           },
           {
-            icon: '',
+            icon: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Atom_editor_logo.svg',
             name: 'Tab Limiter',
             url: 'https://github.com/nju33/atom-tab-limiter'
             // desc: 'タブ数に上限を設定します。'
           },
           {
-            icon: '',
+            icon: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Atom_editor_logo.svg',
             name: 'Maximize Space Pane',
             url: 'https://github.com/nju33/atom-maximaize-space-pane'
             // desc: '現在のPaneをワークスペースいっぱいに広げることができます。'
@@ -511,61 +511,112 @@
             // desc: 'ツールチップのような感じで、ユーザーに確認ダイアログを出したりすることができます。'
           },
           {
-            icon: '',
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
             name: 'Taba',
             url: 'https://github.com/nju33/taba'
             // desc: 'テーブル要素のヘッダーやフッターをポジション固定表示できます。'
           },
           {
-            icon: '',
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
             name: 'Rangebar',
             url: 'https://github.com/nju33/rangebar'
             // desc: 'スタイルをカスタマイズできる、input[type=range]のような要素です。'
           },
           {
-            icon: '',
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'spoc-sidebar',
+            url: 'https://github.com/nju33/apoc-sidebar'
+            // desc: '下から伸びるようなモーダル。'
+          },
+          {
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
             name: 'Suwa',
             url: 'https://github.com/nju33/suwa'
             // desc: '簡単なレイアウトでカルーセルな要素を作ります。'
           },
           {
-            icon: '',
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
             name: 'Mohill',
             url: 'https://github.com/nju33/mohill'
             // desc: '下から伸びるようなモーダル。'
           },
           {
-            icon: '',
-            name: 'Vue Prdiv',
-            url: 'https://github.com/nju33/vue-prediv'
-            // desc: '要素を下に引っ張って更新、みたいなことができるVueComponent。'
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'hanko',
+            url: 'https://github.com/nju33/hanko'
           },
           {
-            icon: '',
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'context-modal',
+            url: 'https://github.com/nju33/context-modal'
+          },
+          {
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'efo',
+            url: 'https://github.com/nju33/efo'
+          },
+          {
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'mac-window',
+            url: 'https://github.com/nju33/mac-window'
+          },
+          {
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'acoru',
+            url: 'https://github.com/nju33/acoru'
+          },
+          {
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'tuta',
+            url: 'https://github.com/nju33/tuta'
+          },
+          {
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'aru',
+            url: 'https://github.com/nju33/aru'
+          },
+          {
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'poipoi',
+            url: 'https://github.com/nju33/poipoi'
+          },
+          {
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
+            name: 'soshoku',
+            url: 'https://github.com/nju33/soshoku'
+          },
+          {
+            icon: 'https://ohdoylerules.com/content/images/npm-logo.svg',
             name: 'Diz',
             url: 'https://github.com/nju33/diz'
             // desc: '静的サイトジェネレータ。'
           },
           {
-            icon: '',
+            icon: 'https://jp.vuejs.org/images/logo.png',
+            name: 'Vue Prdiv',
+            url: 'https://github.com/nju33/vue-prediv'
+            // desc: '要素を下に引っ張って更新、みたいなことができるVueComponent。'
+          },
+          {
+            icon: 'http://postcss.org/_/web_modules/Hero/postcss.svg',
             name: 'PostCSS Octicon',
             url: 'https://github.com/nju33/postcss-octicon'
             // desc: 'セレクタにプレフィックスを付けれるPostCSSプラグイン。'
           },
           {
-            icon: '',
+            icon: 'http://postcss.org/_/web_modules/Hero/postcss.svg',
             name: 'PostCSS Blokk',
             url: 'https://github.com/nju33/postcss-blokk'
             // desc: 'セレクタにプレフィックスを付けれるPostCSSプラグイン。'
           },
           {
-            icon: '',
+            icon: 'http://postcss.org/_/web_modules/Hero/postcss.svg',
             name: 'PostCSS Namespace',
             url: 'https://github.com/nju33/postcss-namespace'
             // desc: 'セレクタにプレフィックスを付けれるPostCSSプラグイン。'
           },
           {
-            icon: '',
+            icon: 'http://postcss.org/_/web_modules/Hero/postcss.svg',
             name: 'PostCSS Preref',
             url: 'https://github.com/nju33/postcss-preref'
             // desc: '何度も同じセレクタ部分を書かなくて済むPostCSSプラグイン'
