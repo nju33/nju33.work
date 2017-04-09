@@ -890,13 +890,17 @@
 
 .section-body.own {
   opacity: 0;
-  transition-property: opacity !important;
-  transition-duration: .2s !important;
-  transition-delay: .4s !important;
+  transition-property: opacity, height !important;
+  transition-duration: .2s, .01s !important;
+  transition-delay: 0s, .4s !important;
   transition-timing-function: linear !important;
 }
 
 .acoru-opened .section-body.own {
+  transition-property: opacity !important;
+  transition-duration: .2s !important;
+  transition-delay: .4s !important;
+  transition-timing-function: linear !important;
   opacity: 1;
 }
 
