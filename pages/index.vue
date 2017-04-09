@@ -27,7 +27,7 @@
             </svg>
           </h1>
         </header>
-        <div data-acoru-id="own" class="section-body" style="display:none">
+        <div data-acoru-id="own" class="section-body own" style="display:none">
           <section class="own-section">
             <h2 class="own-name">nju33 <small>佐々木純</small></h2>
             <div class="own-body">
@@ -886,6 +886,18 @@
   max-width: 90%;
   padding: 0 1em;
   overflow: hidden;
+}
+
+.section-body.own {
+  opacity: 0;
+  transition-property: opacity !important;
+  transition-duration: .2s !important;
+  transition-delay: .4s !important;
+  transition-timing-function: linear !important;
+}
+
+.acoru-opened .section-body.own {
+  opacity: 1;
 }
 
 @media (min-width: 425px){
